@@ -1,0 +1,43 @@
+name: CI Pipeline - Post-it
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # --- JOB BACKEND ---
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Build and Test Backend
+        run: |
+          cd backend
+          mvn clean package
+        # Note : Ici on ne skip pas les tests !
+
+  # --- JOB FRONTEND ---
+  build-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install and Test Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run test -- --run
+          npm run build

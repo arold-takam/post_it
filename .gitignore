@@ -1,0 +1,31 @@
+# --- Node / Frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+
+# --- Java / Backend ---
+backend/target/
+backend/.idea/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/.env.local
+backend/.env.development
+backend/.env.production
+
+# --- Docker / Database ---
+data/
+*.pid
+*.log
+
+# --- System files ---
+.DS_Store
+Thumbs.db
+
+# --- Git / OS ---
+*.swp
+*.swo
+*.bak
+*.tmp
