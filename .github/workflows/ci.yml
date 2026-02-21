@@ -2,9 +2,9 @@ name: CI Pipeline - Post-it
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   # --- JOB BACKEND ---
