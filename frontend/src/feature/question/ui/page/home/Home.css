@@ -1,0 +1,500 @@
+& .home{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100dvw;
+    height: 100dvh;
+    scroll-behavior: smooth;
+    background-color: var(--secondaryColor);
+
+
+    & .hiddenAdd{
+        transition: all .5s ease;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        display: none;
+    }
+    & .add{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--secondaryColor);
+        opacity: 1;
+        pointer-events: auto;
+        transition: all .5s ease;
+        visibility: visible;
+        z-index: 100;
+
+        & .up{
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 6rem;
+            padding: 1rem;
+
+            & .back{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16rem;
+                height: 3rem;
+                background-color: var(--greyColor);
+                border: none;
+                border-radius: .5rem;
+                color: var(--blackColor);
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &:hover{
+                    background-color: var(--mainColor);
+                    color: var(--whiteColor);
+                    font-weight: bold;
+                }
+            }
+        }
+
+        & .formAdd{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            height: calc(100dvh - 6rem);
+
+            & label{
+                font-size: x-large;
+                font-weight: 570;
+            }
+
+            & textarea{
+                width: 30rem;
+                height: 8rem;
+                border: none;
+                border-radius: 1rem;
+                outline: none;
+                padding: 1rem;
+            }
+
+            & .addBtn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16rem;
+                height: 3rem;
+                background-color: var(--greyColor);
+                border: none;
+                border-radius: .5rem;
+                color: var(--blackColor);
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &:hover{
+                    background-color: var(--mainColor);
+                    color: var(--whiteColor);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    & .hiddenUpd{
+        transition: all .5s ease;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        display: none;
+    }
+    & .update{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100dvh;
+        background-color: var(--secondaryColor);
+        opacity: 1;
+        pointer-events: auto;
+        transition: all .5s ease;
+        visibility: visible;
+        z-index: 100;
+
+        & .up{
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 6rem;
+            padding: 1rem;
+
+            & .back{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16rem;
+                height: 3rem;
+                background-color: var(--greyColor);
+                border: none;
+                border-radius: .5rem;
+                color: var(--blackColor);
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &:hover{
+                    background-color: var(--mainColor);
+                    color: var(--whiteColor);
+                    font-weight: bold;
+                }
+            }
+        }
+
+        & .formUpdate{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+            height: calc(100dvh - 6rem);
+
+            & p{
+                font-size: x-large;
+            }
+
+            & label{
+                font-size: x-large;
+                font-weight: 570;
+            }
+
+            & .area{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                & textarea{
+                    width: 30rem;
+                    height: 8rem;
+                    border: none;
+                    border-radius: 1rem;
+                    outline: none;
+                    padding: 1rem;
+                }
+            }
+
+            & .put{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            & .cta{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                width: 30rem;
+
+                & button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 16rem;
+                    height: 3rem;
+                    background-color: var(--greyColor);
+                    border: none;
+                    border-radius: .5rem;
+                    color: var(--blackColor);
+                    cursor: pointer;
+                    transition: all .5s ease;
+
+                    & img{
+                        width: 2rem;
+                    }
+
+                    &:hover{
+                        background-color: var(--mainColor);
+                        color: var(--whiteColor);
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    & header{
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 6rem;
+        padding: 1rem;
+
+        & .logo{
+            color: var(--mainColor);
+            font-size: 4rem;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        & .addQuestion{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--mainColor);
+            border: none;
+            border-radius: 1rem;
+            padding: .5rem 1rem;
+
+            & p{
+                color: var(--whiteColor);
+                font-size: xx-large;
+                font-weight: 570;
+            }
+
+            & img{
+                width: 3rem;
+                aspect-ratio: 4/4;
+            }
+        }
+    }
+
+    & .hero{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        & h1{
+            font-size: 3rem;
+        }
+
+        & .filterZone{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--mainColor);
+            border-radius: .5rem;
+            list-style: none;
+            padding: .5rem 1rem;
+
+            & li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 8rem;
+                    height: 2.5rem;
+                    background-color: var(--whiteColor);
+                    border: none;
+                    border-radius: 2rem;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: all .5s ease;
+
+                    &:hover{
+                        background-color: var(--blackColor);
+                        color: var(--whiteColor);
+                    }
+                }
+                & .active{
+                    background-color: var(--blackColor);
+                    color: var(--whiteColor);
+                }
+            }
+        }
+    }
+
+    & .screen{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        height: calc(100dvh - 9rem);
+        overflow: hidden scroll;
+        padding: 1rem;
+        scroll-behavior: smooth;
+
+        & ul{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            list-style: none;
+
+            & li{
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 1rem;
+                width: 30rem;
+                max-height: 16rem;
+                background-color: var(--whiteColor);
+                border-radius: 1rem;
+                box-shadow: 0 0 2px rgba(0,0,0,0.25);
+                overflow: hidden scroll;
+                padding: 1rem;
+
+                & .check{
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2rem;
+                    aspect-ratio: 4/4;
+                    background-color: var(--secondaryColor);
+                    border: 2px solid var(--secondaryColor);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    overflow: hidden;
+                    padding: 0.2rem;
+                    transition: all .5s ease;
+
+                    & img{
+                        width: 100%;
+                        aspect-ratio: 4/4;
+                    }
+                }
+                & .active{
+                    background-color: var(--mainColor);
+                }
+
+                & p{
+                    max-height: calc(100% - 8rem);
+                    overflow: hidden scroll;
+
+                    &::-webkit-scrollbar{
+                        display: none;
+                    }
+                }
+
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+/*RESPONSIVE VERSION---------------------------------*/
+
+@media (max-width: 768px) {
+    & .home{
+
+        & .add{
+
+            & .up{
+
+                & .back{
+                    width: 8rem;
+                }
+            }
+
+            & .formAdd{
+                padding: 1rem;
+
+                & textarea{
+                    width: 100%;
+                }
+            }
+        }
+
+        & .update{
+
+            & .up{
+
+                & .back{
+                    width: 8rem;
+                }
+            }
+
+            & .formUpdate{
+
+                & .area{
+                    width: 100%;
+                    padding: 0 1rem;
+
+                    & textarea{
+                        width: 100%;
+                    }
+                }
+
+                & .cta{
+                    width: 100%;
+                    padding: 0 1rem;
+                }
+            }
+        }
+
+        & header{
+            padding: .5rem;
+
+            & .logo{
+                font-size: 3rem;
+            }
+
+            & .addQuestion{
+
+                & p{
+                    font-size: x-large;
+                }
+
+                & img{
+                    width: 2rem;
+                }
+            }
+        }
+
+        & .hero{
+
+            & h1{
+                font-size: 2.5rem;
+            }
+
+            & .filterZone{
+
+                & li{
+
+                    & button{
+                        width: 6rem;
+                        height: 2.5rem;
+                    }
+                }
+            }
+        }
+
+        & .screen{
+            padding: .5rem;
+
+            & ul{
+
+                & li{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

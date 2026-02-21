@@ -1,0 +1,45 @@
+services:
+  # --- DATABASE ---
+  db:
+    image: postgres:15-alpine
+    container_name: question_db_container
+    environment:
+      POSTGRES_DB: question_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d question_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # --- BACKEND ---
+  backend:
+    build: ./backend
+    container_name: post_it_backend
+    ports:
+      - "8080:8080"
+    environment:
+      # On injecte les variables pour écraser le localhost du app-dev.yml
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/question_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # --- FRONTEND ---
+  frontend:
+    build: ./frontend
+    container_name: post_it_frontend
+    ports:
+      - "8081:80"
+    environment:
+      - VITE_API_URL=/api/v1
+    depends_on:
+      - backend

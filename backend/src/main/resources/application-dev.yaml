@@ -1,0 +1,18 @@
+spring:
+        datasource:
+                url: jdbc:postgresql://localhost:5432/question_db
+                username: postgres
+                password: "postgres"
+                hikari:
+                        maximum-pool-size: 10
+                        minimum-idle: 5
+        jpa:
+                hibernate:
+                        ddl-auto: update
+                show-sql: true
+                properties:
+                        hibernate:
+                                format_sql: true
+                                jdbc:
+                                        lob:
+                                                non_contextual_creation: true
