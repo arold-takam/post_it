@@ -1,0 +1,1 @@
+web: java -jar target/post_it-0.0.1-SNAPSHOT.jar
