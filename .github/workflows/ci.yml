@@ -36,8 +36,8 @@ jobs:
         run: |
           cd backend
           mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                -Dsonar.projectKey=TON_PROJECT_KEY \
-                -Dsonar.organization=TON_ORG_KEY \
+                -Dsonar.projectKey=arold-takus_post_it \
+                -Dsonar.organization=arold-takus \
                 -Dsonar.host.url=https://sonarcloud.io \
                 -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
