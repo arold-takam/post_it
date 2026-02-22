@@ -35,10 +35,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Ton secret
         run: |
           cd backend
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=arold-takam_post_it \
-            -Dsonar.organization=arold-takam \
-            -Dsonar.host.url=https://sonarcloud.io
+          mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                -Dsonar.projectKey=TON_PROJECT_KEY \
+                -Dsonar.organization=TON_ORG_KEY \
+                -Dsonar.host.url=https://sonarcloud.io \
+                -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
   # --- JOB FRONTEND ---
   build-frontend:
