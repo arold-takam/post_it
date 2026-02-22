@@ -20,7 +20,7 @@ data/
 *.pid
 *.log
 
-# --- System files ---
+# --- Systems files ---
 .DS_Store
 Thumbs.db
 
